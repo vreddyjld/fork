@@ -1,0 +1,149 @@
+/*C program to find factorial of a number.*/
+ 
+#include <stdio.h>
+ 
+int main()
+{
+    int num,i;
+    long int fact;
+  
+    printf("Enter an integer number: ");
+    scanf("%d",&num);
+  
+    /*product of numbers from num to 1*/
+    fact=1;
+    for(i=num; i>=1; i--)
+        fact=fact*i;
+         
+    printf("\nFactorial of %d is = %ld",num,fact);
+      
+    return 0;
+}
+
+
+/*C program to find largest of three numbers.*/
+
+#include<stdio.h>
+int main()
+{
+   int num1,num2,num3;
+   
+   //Ask user to input any three integer numbers
+   printf("\nEnter value of num1, num2 and num3:");
+   //Store input values in variables for comparsion
+   scanf("%d %d %d",&num1,&num2,&num3);
+
+   if((num1>num2)&&(num1>num3))
+      printf("\n Number1 is greatest");
+   else if((num2>num3)&&(num2>num1))
+      printf("\n Number2 is greatest");
+   else
+      printf("\n Number3 is greatest");
+   return 0;
+}
+
+/*C program to check given number is palindrome or not.*/
+
+#include <stdio.h>
+int main() {
+  int n, reversed = 0, remainder, original;
+    printf("Enter an integer: ");
+    scanf("%d", &n);
+    original = n;
+
+    // reversed integer is stored in reversed variable
+    while (n != 0) {
+        remainder = n % 10;
+        reversed = reversed * 10 + remainder;
+        n /= 10;
+    }
+
+    // palindrome if orignal and reversed are equal
+    if (original == reversed)
+        printf("%d is a palindrome.", original);
+    else
+        printf("%d is not a palindrome.", original);
+
+    return 0;
+}
+
+/*C program to display reverse of a string.*/
+
+#include <stdio.h>
+int main()
+{
+  char str[1000], rev[1000];
+  int i, j, count = 0;
+  scanf("%s", str);
+  printf("\nString Before Reverse: %s", str);
+  //finding the length of the string
+  while (str[count] != '\0')
+  {
+    count++;
+  }
+  j = count - 1;
+
+  //reversing the string by swapping
+  for (i = 0; i < count; i++)
+  {
+    rev[i] = str[j];
+    j--;
+  }
+
+  printf("\nString After Reverse: %s", rev);
+}
+
+/*C program to check given number is prime or not.*/
+
+#include <stdio.h>
+int main() {
+  int n, i, flag = 0;
+  printf("Enter a positive integer: ");
+  scanf("%d", &n);
+
+  for (i = 2; i <= n / 2; ++i) {
+    // condition for non-prime
+    if (n % i == 0) {
+      flag = 1;
+      break;
+    }
+  }
+
+  if (n == 1) {
+    printf("1 is neither prime nor composite.");
+  } 
+  else {
+    if (flag == 0)
+      printf("%d is a prime number.", n);
+    else
+      printf("%d is not a prime number.", n);
+  }
+
+  return 0;
+}
+
+/*C program to sort given numbers.*/
+
+#include <stdio.h>
+void main (){
+   int num[20];
+   int i, j, a, n;
+   printf("enter number of elements in an array\n");
+   scanf("%d", &n);
+   printf("Enter the elements\n");
+   for (i = 0; i < n; ++i)
+      scanf("%d", &num[i]);
+   for (i = 0; i < n; ++i){
+      for (j = i + 1; j < n; ++j){
+         if (num[i] > num[j]){
+            a = num[i];
+            num[i] = num[j];
+            num[j] = a;
+         }
+      }
+   }
+   printf("The numbers in ascending order is:\n");
+   for (i = 0; i < n; ++i){
+      printf("%d\n", num[i]);
+   }
+}
